@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://c1ga80tl3huls"]
 
-[ext_resource type="Script" path="res://Scenes/Menu/crazy_tiles.gd" id="1_o2726"]
+[ext_resource type="Script" path="res://scenes/menu/crazy_tiles.gd" id="1_o2726"]
 
 [node name="crazy_tiles" type="Control"]
 layout_mode = 3

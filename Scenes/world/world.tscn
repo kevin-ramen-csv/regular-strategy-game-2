@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://cfbxlkehw8wws"]
+
+[ext_resource type="PackedScene" uid="uid://bn8oloyy86jnd" path="res://assets/entites/tile_platform.tscn" id="1_16anp"]
+
+[node name="world" type="Node2D"]
+
+[node name="pov" type="Camera2D" parent="."]
+
+[node name="tile-platform" parent="pov" instance=ExtResource("1_16anp")]
+position = Vector2(1785, 815)

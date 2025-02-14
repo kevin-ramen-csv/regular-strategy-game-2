@@ -1,0 +1,58 @@
+[gd_scene load_steps=8 format=4 uid="uid://bn8oloyy86jnd"]
+
+[ext_resource type="Texture2D" uid="uid://ntr2ylqmfujd" path="res://assets/img/tiletest.png" id="2_4wgy1"]
+[ext_resource type="Texture2D" uid="uid://cdk10ajre86d8" path="res://assets/img/tiles_sprite_sheet.png" id="2_sxnap"]
+[ext_resource type="Texture2D" uid="uid://dq6khld427r12" path="res://assets/img/tile_map_sprite_sheet.png" id="3_6hmvv"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tspb8"]
+texture = ExtResource("2_4wgy1")
+texture_region_size = Vector2i(528, 512)
+0:0/0 = 0
+0:0/0/texture_origin = Vector2i(0, -117)
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_11ub8"]
+texture = ExtResource("2_sxnap")
+texture_region_size = Vector2i(561, 544)
+0:0/0 = 0
+0:0/0/texture_origin = Vector2i(0, -102)
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ahagn"]
+texture = ExtResource("3_6hmvv")
+texture_region_size = Vector2i(561, 544)
+0:0/0 = 0
+0:0/0/texture_origin = Vector2i(0, -102)
+1:0/0 = 0
+1:0/0/texture_origin = Vector2i(0, -102)
+2:0/0 = 0
+2:0/0/texture_origin = Vector2i(0, -102)
+3:0/0 = 0
+3:0/0/texture_origin = Vector2i(0, -102)
+4:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_usb8b"]
+tile_shape = 1
+tile_layout = 5
+tile_size = Vector2i(515, 257)
+sources/3 = SubResource("TileSetAtlasSource_tspb8")
+sources/4 = SubResource("TileSetAtlasSource_11ub8")
+sources/5 = SubResource("TileSetAtlasSource_ahagn")
+
+[node name="tile-platform" type="Node2D"]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+position = Vector2(647, 209)
+rotation = -0.0225462
+tile_map_data = PackedByteArray("AAD9//7/BQAAAAAAAAD9////BQAAAAAAAAD9/wAABQAAAAAAAAD+//7/BQAAAAAAAAD+/wAABQAAAAAAAAD+////BQAAAAAAAAD///7/BQAAAAAAAAD/////BQAAAAAAAAD//wAABQAAAAAAAAA=")
+tile_set = SubResource("TileSet_usb8b")

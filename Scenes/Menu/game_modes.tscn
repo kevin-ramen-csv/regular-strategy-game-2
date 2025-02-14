@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://crxhp1le67olu"]
 
-[ext_resource type="Script" path="res://Scenes/Menu/game_modes.gd" id="1_mfy8g"]
+[ext_resource type="Script" path="res://scenes/menu/game_modes.gd" id="1_mfy8g"]
 
 [node name="game_modes" type="Control"]
 layout_mode = 3
@@ -46,5 +46,6 @@ text = "Crazy Tiles"
 layout_mode = 2
 text = "Back"
 
+[connection signal="pressed" from="VBoxContainer/single_player" to="." method="_on_single_player_pressed"]
 [connection signal="pressed" from="VBoxContainer/crazy_tiles" to="." method="_on_crazy_tiles_pressed"]
 [connection signal="pressed" from="VBoxContainer/back" to="." method="_on_back_pressed"]
