@@ -4,7 +4,10 @@
 
 [node name="world" type="Node2D"]
 
-[node name="pov" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(3850, 803)
+anchor_mode = 0
+zoom = Vector2(0.25, 0.25)
 
-[node name="tile-platform" parent="pov" instance=ExtResource("1_16anp")]
-position = Vector2(1785, 815)
+[node name="tile-platform" parent="Camera2D" instance=ExtResource("1_16anp")]
+position = Vector2(2280, 1220)
