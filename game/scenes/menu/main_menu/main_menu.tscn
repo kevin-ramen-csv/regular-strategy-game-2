@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://clgeekavxq24a"]
 
-[ext_resource type="Script" path="res://scenes/menu/menu.gd" id="1_rqr50"]
+[ext_resource type="Script" path="res://game/scenes/menu/main_menu/main_menu.gd" id="1_1c4nd"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -11,7 +11,7 @@ offset_left = 3.0
 offset_right = 3.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_rqr50")
+script = ExtResource("1_1c4nd")
 
 [node name="background" type="ColorRect" parent="."]
 layout_mode = 1

@@ -1,0 +1,36 @@
+[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://cf7y36lm2gc1d"]
+
+[ext_resource type="Texture2D" uid="uid://dq6khld427r12" path="res://assets/spritesheets/tile_map_sprite_sheet.png" id="1_4efo8"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ahagn"]
+texture = ExtResource("1_4efo8")
+texture_region_size = Vector2i(561, 544)
+0:0/0 = 0
+0:0/0/texture_origin = Vector2i(0, -102)
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(0, -128.5, -257.5, 0, 0, 128.5, 257.5, 0)
+0:0/0/custom_data_1 = true
+2:0/0 = 0
+2:0/0/texture_origin = Vector2i(0, -102)
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(0, -128.5, -257.5, 0, 0, 128.5, 257.5, 0)
+2:0/0/custom_data_1 = true
+3:0/0 = 0
+3:0/0/texture_origin = Vector2i(0, -102)
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(0, -128.5, -257.5, 0, 0, 128.5, 257.5, 0)
+3:0/0/custom_data_1 = true
+4:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+
+[resource]
+tile_shape = 1
+tile_layout = 5
+tile_size = Vector2i(515, 257)
+physics_layer_0/collision_layer = 1
+custom_data_layer_0/name = "times_clicked"
+custom_data_layer_0/type = 2
+custom_data_layer_1/name = "walkable"
+custom_data_layer_1/type = 1
+sources/5 = SubResource("TileSetAtlasSource_ahagn")

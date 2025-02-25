@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://cfbxlkehw8wws"]
+
+[ext_resource type="PackedScene" uid="uid://bn8oloyy86jnd" path="res://assets/entites/tile_platform.tscn" id="1_16anp"]
+[ext_resource type="Script" path="res://scenes/world/world.gd" id="1_sdqim"]
+[ext_resource type="Script" path="res://scenes/world/character_body_2d.gd" id="3_csw54"]
+[ext_resource type="Texture2D" uid="uid://cvdj4jorac834" path="res://icon.svg" id="3_eh41w"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lprhu"]
+size = Vector2(242.75, 230)
+
+[node name="world" type="Node2D"]
+script = ExtResource("1_sdqim")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(3850, 803)
+anchor_mode = 0
+zoom = Vector2(0.25, 0.25)
+
+[node name="tile-platform" parent="Camera2D" instance=ExtResource("1_16anp")]
+position = Vector2(2030, 565)
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="Camera2D"]
+z_index = 1
+position = Vector2(278, 125)
+script = ExtResource("3_csw54")
+
+[node name="Sprite2D" type="Sprite2D" parent="Camera2D/CharacterBody2D"]
+position = Vector2(2027, 984)
+scale = Vector2(1.93441, 1.8308)
+texture = ExtResource("3_eh41w")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Camera2D/CharacterBody2D"]
+position = Vector2(2029, 985)
+shape = SubResource("RectangleShape2D_lprhu")
+
+[connection signal="mouse_entered" from="Camera2D/CharacterBody2D" to="Camera2D/CharacterBody2D" method="_on_mouse_entered"]
+
+[editable path="Camera2D/tile-platform"]
