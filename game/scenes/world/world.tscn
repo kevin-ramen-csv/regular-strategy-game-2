@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bn8oloyy86jnd" path="res://assets/tilesets/tile_platform.tscn" id="1_16anp"]
 [ext_resource type="Script" path="res://game/scenes/world/world.gd" id="1_sdqim"]
-[ext_resource type="Script" path="res://game/scenes/world/character_body_2d.gd" id="3_csw54"]
+[ext_resource type="Script" path="res://domain/entities/player/player.gd" id="3_csw54"]
 [ext_resource type="Texture2D" uid="uid://cvdj4jorac834" path="res://icon.svg" id="3_eh41w"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lprhu"]
@@ -12,26 +12,26 @@ size = Vector2(242.75, 230)
 position = Vector2(18, 0)
 script = ExtResource("1_sdqim")
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+[node name="player" type="CharacterBody2D" parent="."]
 z_index = 1
 position = Vector2(-11, -78)
 input_pickable = true
 motion_mode = 1
 script = ExtResource("3_csw54")
 
-[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+[node name="Sprite2D" type="Sprite2D" parent="player"]
 position = Vector2(-0.197762, -42.8288)
 scale = Vector2(1.93441, 1.8308)
 texture = ExtResource("3_eh41w")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player"]
 position = Vector2(1.80212, -41.8288)
 shape = SubResource("RectangleShape2D_lprhu")
 
-[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+[node name="Camera2D" type="Camera2D" parent="player"]
 position = Vector2(-0.197998, 0.171204)
 zoom = Vector2(0.25, 0.25)
 
 [node name="tile-platform" parent="." instance=ExtResource("1_16anp")]
 
-[connection signal="input_event" from="CharacterBody2D" to="CharacterBody2D" method="_on_input_event"]
+[connection signal="input_event" from="player" to="player" method="_on_input_event"]
