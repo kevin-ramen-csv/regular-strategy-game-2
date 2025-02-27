@@ -29,3 +29,12 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("right"):
 		prints(player.global_position, platform.local_to_map(player.global_position))
 		player.move(Vector2i.RIGHT)
+	pass
+
+
+func _on_player_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	if event.is_action_pressed("clicked"):
+		print("Character clicked")
+		# Show Possible paths
+		player.valid_moves()
+	pass # Replace with function body.

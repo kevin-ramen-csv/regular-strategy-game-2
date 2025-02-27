@@ -34,4 +34,4 @@ zoom = Vector2(0.25, 0.25)
 
 [node name="tile-platform" parent="." instance=ExtResource("1_16anp")]
 
-[connection signal="input_event" from="player" to="player" method="_on_input_event"]
+[connection signal="input_event" from="player" to="." method="_on_player_input_event"]
