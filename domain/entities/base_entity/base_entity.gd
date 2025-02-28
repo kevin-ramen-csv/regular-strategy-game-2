@@ -46,31 +46,32 @@ func valid_moves():
 	var possible_moves = [
 		Vector2i(
 			current_coords.x + Vector2i.UP.x,
-			current_coords.x + Vector2i.UP.y,
+			current_coords.y + Vector2i.UP.y,
 			), 
 		Vector2i(
 			current_coords.x + Vector2i.DOWN.x,
-			current_coords.x + Vector2i.DOWN.y,
+			current_coords.y + Vector2i.DOWN.y,
 		),
 		Vector2i(
 			current_coords.x + Vector2i.LEFT.x,
-			current_coords.x + Vector2i.LEFT.y,
+			current_coords.y + Vector2i.LEFT.y,
 		),
 		Vector2i(
 			current_coords.x + Vector2i.RIGHT.x,
-			current_coords.x + Vector2i.RIGHT.y,
+			current_coords.y + Vector2i.RIGHT.y,
 		)
 		]
-		
+	
+	var valid_coords = []
 	for coords in possible_moves:
-		if !is_walkable(coords):
-			possible_moves.erase(coords)
+		if is_walkable(coords):
+			valid_coords.append(coords)
 			
 	print(possible_moves)
-	return possible_moves
+	print(valid_coords)
+	return valid_coords
 
 func _has_floor() -> bool:
 	return self.tile_map != null
-	
 
 	

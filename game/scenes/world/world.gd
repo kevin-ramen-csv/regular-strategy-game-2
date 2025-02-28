@@ -20,15 +20,23 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("up"):
 		prints(player.global_position, platform.local_to_map(player.global_position))
 		player.move(Vector2i.UP)
+		var valid_cells = player.valid_moves()
+		highlight_cell(valid_cells, 1)
 	if Input.is_action_just_pressed("down"):
 		prints(player.global_position, platform.local_to_map(player.global_position))
 		player.move(Vector2i.DOWN)
+		var valid_cells = player.valid_moves()
+		highlight_cell(valid_cells, 1)
 	if Input.is_action_just_pressed("left"):
 		prints(player.global_position, platform.local_to_map(player.global_position))
 		player.move(Vector2i.LEFT)
+		var valid_cells = player.valid_moves()
+		highlight_cell(valid_cells, 1)
 	if Input.is_action_just_pressed("right"):
 		prints(player.global_position, platform.local_to_map(player.global_position))
 		player.move(Vector2i.RIGHT)
+		var valid_cells = player.valid_moves()
+		highlight_cell(valid_cells, 1)
 	pass
 
 
@@ -36,5 +44,12 @@ func _on_player_input_event(viewport: Node, event: InputEvent, shape_idx: int) -
 	if event.is_action_pressed("clicked"):
 		print("Character clicked")
 		# Show Possible paths
-		player.valid_moves()
+		var valid_cells = player.valid_moves()
+		highlight_cell(valid_cells,7)
+		
 	pass # Replace with function body.
+	
+func highlight_cell(valid_cells : Array, source_id : int)->void:
+	for cell_coords in valid_cells:
+		platform.set_cell(cell_coords,source_id,Vector2i.ZERO)
+	pass
