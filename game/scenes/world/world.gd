@@ -41,15 +41,21 @@ func _process(delta: float) -> void:
 
 
 func _on_player_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
-	if event.is_action_pressed("clicked"):
+	if event.is_action_pressed("left click"):
 		print("Character clicked")
 		# Show Possible paths
 		var valid_cells = player.valid_moves()
 		highlight_cell(valid_cells,7)
 		
+	if event.is_action_pressed("right click"):
+		print("Character clicked")
+		# Show Possible paths
+		var valid_cells = player.valid_moves()
+		highlight_cell(valid_cells,3)
+		
 	pass # Replace with function body.
 	
-func highlight_cell(valid_cells : Array, source_id : int)->void:
+func highlight_cell(valid_cells : Array, source_id : int)-> Array:
 	for cell_coords in valid_cells:
 		platform.set_cell(cell_coords,source_id,Vector2i.ZERO)
-	pass
+	return valid_cells
