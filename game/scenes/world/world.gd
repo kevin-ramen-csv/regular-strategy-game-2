@@ -3,6 +3,7 @@ extends Node2D
 @onready var player : Ring = $player
 @onready var platform = $"tile-platform"
 @onready var mouse_points_character : bool = false
+var action_mode : int
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -21,11 +22,13 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if self.mouse_points_character:
 		return
-
 	if Input.is_action_pressed("left click"):
-		#reset highlight
-		platform.highlight_cell(player.possible_moves,{},true)
-		print("TileMap Clicked!")
+		if action_mode == Action.action.MOVE:
+			#reset highlight
+			platform.highlight_cell(player.possible_moves,{},true)
+			player.move(platform.local_to_map(get_local_mouse_position()))
+		else:
+			print("Not Implemented!")
 	#print("Mouse", get_local_mouse_position(), platform.local_to_map(get_local_mouse_position()))
 	#if event.is_action_pressed("left click"):
 		#print(player.current_position())
@@ -35,6 +38,7 @@ func _process(delta: float) -> void:
 func _on_player_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	player.set_possible_moves()
 	if event.is_action_pressed("left click"):
+		action_mode = Action.action.MOVE
 		#reset highlight
 		platform.highlight_cell(player.possible_moves,{},true)
 		print("Character clicked")
@@ -42,6 +46,7 @@ func _on_player_input_event(viewport: Node, event: InputEvent, shape_idx: int) -
 		platform.highlight_cell(player.possible_moves,CellSprite.LEVEL1_MOVE_HIGHLIGHT)
 		
 	if event.is_action_pressed("right click"):
+		action_mode = Action.action.ATTACK
 		#reset highlight
 		platform.highlight_cell(player.possible_moves,{},true)
 		print("Character clicked")

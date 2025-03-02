@@ -22,6 +22,9 @@ func is_walkable(target_coords : Vector2i) -> bool:
 		#print("Cell doesnt exists")
 		return false
 		
+	if !cell_data.get_custom_data("walkable"):
+		print("Can't walk on air!")
+		
 	return cell_data.get_custom_data("walkable")
 
 # Retrieves the current position based on the tile map
@@ -32,21 +35,12 @@ func current_position():
 	return self.tile_map.local_to_map(self.global_position)
 
 # Move player's position given a new one
-func move(direction: Vector2i):
-	if !_has_floor():
-		print("No platform assigned to the player!")
-		return false
-	
-	# Target cell coordinates
-	var target_coords : Vector2i = Vector2i(
-		current_position().x + direction.x,
-		current_position().y + direction.y
-	)
-	#Checks if the target cell is walkable
-	if !is_walkable(target_coords):
-		print("Can't walk on air!")
-		return false
-		
+func move(target_coords: Vector2i):
+	print(target_coords)
+	print(self.possible_moves)
+	if !self.possible_moves.has(target_coords):
+		print("Can't go any further!")
+		return
 	# Move player
 	global_position = tile_map.map_to_local(target_coords)
 	
