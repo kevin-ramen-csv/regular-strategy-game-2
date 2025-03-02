@@ -28,6 +28,7 @@ texture = ExtResource("2_gcurs")
 texture_region_size = Vector2i(1024, 1024)
 0:0/0 = 0
 0:0/0/texture_origin = Vector2i(-8, -250)
+0:0/0/custom_data_1 = true
 0:1/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qmwvj"]
@@ -35,6 +36,7 @@ texture = ExtResource("3_fni6q")
 texture_region_size = Vector2i(1024, 1024)
 0:0/0 = 0
 0:0/0/texture_origin = Vector2i(-8, -250)
+0:0/0/custom_data_1 = true
 0:1/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3aah1"]
@@ -42,6 +44,7 @@ texture = ExtResource("4_y67wq")
 texture_region_size = Vector2i(1024, 1024)
 0:0/0 = 0
 0:0/0/texture_origin = Vector2i(-8, -250)
+0:0/0/custom_data_1 = true
 0:1/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mrmha"]
@@ -49,6 +52,7 @@ texture = ExtResource("5_dw68s")
 texture_region_size = Vector2i(1024, 1024)
 0:0/0 = 0
 0:0/0/texture_origin = Vector2i(-8, -250)
+0:0/0/custom_data_1 = true
 0:1/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h8jwv"]
@@ -56,6 +60,7 @@ texture = ExtResource("6_11fqx")
 texture_region_size = Vector2i(1024, 1024)
 0:0/0 = 0
 0:0/0/texture_origin = Vector2i(-8, -250)
+0:0/0/custom_data_1 = true
 0:1/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_71xu8"]
@@ -121,6 +126,7 @@ texture = ExtResource("12_i007k")
 texture_region_size = Vector2i(1024, 1024)
 0:0/0 = 0
 0:0/0/texture_origin = Vector2i(-8, -250)
+0:0/0/custom_data_1 = true
 0:1/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8cun6"]
@@ -128,6 +134,7 @@ texture = ExtResource("13_edgrw")
 texture_region_size = Vector2i(1024, 1024)
 0:0/0 = 0
 0:0/0/texture_origin = Vector2i(-8, -250)
+0:0/0/custom_data_1 = true
 0:1/0 = 0
 
 [resource]

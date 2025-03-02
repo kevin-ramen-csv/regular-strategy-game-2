@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bn8oloyy86jnd" path="res://assets/tilesets/tile_platform.tscn" id="1_16anp"]
 [ext_resource type="Script" path="res://game/scenes/world/world.gd" id="1_sdqim"]
-[ext_resource type="Script" path="res://domain/entities/allies/ring.gd" id="3_csw54"]
+[ext_resource type="Script" path="res://domain/entities/player/player.gd" id="3_csw54"]
 [ext_resource type="Texture2D" uid="uid://cvdj4jorac834" path="res://icon.svg" id="3_eh41w"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lprhu"]
@@ -35,4 +35,3 @@ zoom = Vector2(0.2, 0.2)
 [node name="tile-platform" parent="." instance=ExtResource("1_16anp")]
 
 [connection signal="input_event" from="player" to="." method="_on_player_input_event"]
-[connection signal="mouse_exited" from="player" to="." method="_on_player_mouse_exited"]
