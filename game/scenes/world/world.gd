@@ -23,9 +23,9 @@ func _process(delta: float) -> void:
 	if self.mouse_points_character:
 		return
 	if Input.is_action_pressed("left click"):
+		#reset highlight
+		platform.highlight_cell(player.possible_moves,{},true)
 		if action_mode == Action.action.MOVE:
-			#reset highlight
-			platform.highlight_cell(player.possible_moves,{},true)
 			player.move(platform.local_to_map(get_local_mouse_position()))
 		else:
 			print("Not Implemented!")
