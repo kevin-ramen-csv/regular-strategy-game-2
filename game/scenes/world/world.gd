@@ -28,6 +28,7 @@ func _process(delta: float) -> void:
 		if action_mode == Action.action.MOVE:
 			player.move(platform.local_to_map(get_local_mouse_position()))
 		else:
+			player.attack(platform.local_to_map(get_local_mouse_position()))
 			print("Not Implemented!")
 	#print("Mouse", get_local_mouse_position(), platform.local_to_map(get_local_mouse_position()))
 	#if event.is_action_pressed("left click"):
