@@ -20,19 +20,38 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if self.mouse_points_character:
-		return
-	if Input.is_action_pressed("left click"):
+	#if self.mouse_points_character:
+		#return
+	#if Input.is_action_pressed("left click"):
+		##reset highlight
+		#platform.highlight_cell(player.possible_moves,{},true)
+		#if action_mode == Action.action.MOVE:
+			#player.move(platform.local_to_map(get_local_mouse_position()))
+		#else:
+			#player.attack(platform.local_to_map(get_local_mouse_position()))
+			#print("Not Implemented!")
+	##print("Mouse", get_local_mouse_position(), platform.local_to_map(get_local_mouse_position()))
+	##if event.is_action_pressed("left click"):
+		##print(player.current_position())
+	pass
+	
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("left click") and self.mouse_points_character == false:
+		print("Action")
 		#reset highlight
 		platform.highlight_cell(player.possible_moves,{},true)
 		if action_mode == Action.action.MOVE:
 			player.move(platform.local_to_map(get_local_mouse_position()))
 		else:
 			player.attack(platform.local_to_map(get_local_mouse_position()))
-			print("Not Implemented!")
-	#print("Mouse", get_local_mouse_position(), platform.local_to_map(get_local_mouse_position()))
-	#if event.is_action_pressed("left click"):
-		#print(player.current_position())
+	#if Input.is_action_pressed("left click") and self.mouse_points_character == false:
+		##reset highlight
+		#platform.highlight_cell(player.possible_moves,{},true)
+		#if action_mode == Action.action.MOVE:
+			#player.move(platform.local_to_map(get_local_mouse_position()))
+		#else:
+			#player.attack(platform.local_to_map(get_local_mouse_position()))
+			#print("Not Implemented!")
 	pass
 
 
