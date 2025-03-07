@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://cfbxlkehw8wws"]
 
 [ext_resource type="PackedScene" uid="uid://bn8oloyy86jnd" path="res://assets/tilesets/tile_platform.tscn" id="1_16anp"]
-[ext_resource type="Script" path="res://game/scenes/world/world.gd" id="1_sdqim"]
-[ext_resource type="Script" path="res://domain/entities/allies/ring.gd" id="3_csw54"]
+[ext_resource type="Script" uid="uid://i6k6aw1g81lo" path="res://game/scenes/world/world.gd" id="1_sdqim"]
+[ext_resource type="Script" uid="uid://uhsmaexi3v4m" path="res://domain/entities/allies/ring.gd" id="3_csw54"]
 [ext_resource type="Texture2D" uid="uid://cvdj4jorac834" path="res://icon.svg" id="3_eh41w"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lprhu"]

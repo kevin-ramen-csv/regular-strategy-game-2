@@ -2,8 +2,50 @@ class_name BasePlatform extends TileMapLayer
 
 #PROPERTIES
 var cells_changes : Array
-
+var cell_map = {}
 #METHODS
+# Maps cells health
+func change_health(coords : Vector2i):
+	var health : int
+	
+	if !self.cell_map.has(coords):
+		var cell : TileData = self.get_cell_tile_data(coords)
+		health = cell.get_custom_data("times_clicked") - 1
+		cell_map[coords] = Cell.new(coords,health)
+		print(cell," Current health: ", health)
+	else:
+		var cell : Cell = self.cell_map[coords]
+		cell.health -= 1
+		health = cell.health
+		print(cell," Current health: ", cell.health)
+		print(self.cell_map[coords])
+	
+	if health == 5:
+		return
+	
+	if health == 4:
+		self.highlight_cell([coords],CellSprite.LEVEL1_4HP)
+		return
+	
+	if health == 3:
+		self.highlight_cell([coords],CellSprite.LEVEL1_3HP)
+		return
+	
+	if health == 2:
+		self.highlight_cell([coords],CellSprite.LEVEL1_2HP)
+		return
+	
+	if health == 1:
+		self.highlight_cell([coords],CellSprite.LEVEL1_1HP)
+		return
+		
+	if health <= 0:
+		self.cell_map.erase(coords)
+		self.erase_cell(coords)
+		return
+		
+	return
+
 # Highlights a certain area.
 func highlight_cell(cells_coords : Array, cell_sprite_data: Dictionary = {}, restore: bool = false) -> void:
 	if restore:

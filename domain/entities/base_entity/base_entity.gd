@@ -1,7 +1,7 @@
 class_name BaseEntity extends CharacterBody2D
 
 # PROPERTIES
-var tile_map : TileMapLayer
+var tile_map : BasePlatform
 var possible_moves : Array
 var possible_attacks : Array
 
@@ -52,29 +52,7 @@ func attack(target_coords: Vector2i):
 		print("Can't go any further!")
 		return
 	# attack
-	var cell_data : TileData = self.tile_map.get_cell_tile_data(target_coords)
+	self.tile_map.change_health(target_coords)
 	
-	if cell_data == null:
-		#print("Cell doesnt exists")
-		return false
-		
-	var tile_health = cell_data.get_custom_data("times_clicked") + 1
-	print("times_clicked",cell_data.get_custom_data("times_clicked"))
-	print("health",tile_health)
-	
-	if tile_health == 5:
-		self.tile_map.erase_cell(target_coords)
-	elif tile_health == 4:
-		self.tile_map.highlight_cell([target_coords],CellSprite.LEVEL1_1HP)
-		cell_data.set_custom_data("times_clicked",tile_health)
-	elif tile_health == 3:
-		self.tile_map.highlight_cell([target_coords],CellSprite.LEVEL1_2HP)
-		cell_data.set_custom_data("times_clicked",tile_health)
-	elif tile_health == 2:
-		self.tile_map.highlight_cell([target_coords],CellSprite.LEVEL1_3HP)
-		cell_data.set_custom_data("times_clicked",tile_health)
-	elif tile_health == 1:
-		self.tile_map.highlight_cell([target_coords],CellSprite.LEVEL1_4HP)
-		cell_data.set_custom_data("times_clicked",tile_health)
 	
 	
