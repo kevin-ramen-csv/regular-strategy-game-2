@@ -1,7 +1,7 @@
 class_name BaseEntity extends CharacterBody2D
 
 # PROPERTIES
-var tile_map : BasePlatform
+var tile_map: BasePlatform
 var possible_moves : Array
 var possible_attacks : Array
 
@@ -19,7 +19,7 @@ func is_walkable(target_coords : Vector2i) -> bool:
 	var cell_data : TileData = self.tile_map.get_cell_tile_data(target_coords)
 	
 	if cell_data == null:
-		#print("Cell doesnt exists")
+		print("Cell doesnt exists")
 		return false
 		
 	if !cell_data.get_custom_data("walkable"):
