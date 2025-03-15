@@ -94,6 +94,10 @@ func restore_cells():
 	for coord in self.last_possible_moves:
 		var cell_data : TileData = self.get_cell_tile_data(coord)
 		var cell_sprite_data : Dictionary =  {}
+		
+		if cell_data == null:
+			continue
+		
 		if cell_data.get_custom_data("health") == 5:
 			cell_sprite_data = CellSprite.LEVEL1_5HP
 		elif cell_data.get_custom_data("health") == 4:

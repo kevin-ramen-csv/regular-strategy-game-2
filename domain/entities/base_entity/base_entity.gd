@@ -19,7 +19,7 @@ func is_walkable(target_coords : Vector2i) -> bool:
 	var cell_data : TileData = self.tile_map.get_cell_tile_data(target_coords)
 	
 	if cell_data == null:
-		print("Cell doesnt exists")
+		#print("Cell doesnt exists")
 		return false
 		
 	if !cell_data.get_custom_data("walkable"):
@@ -36,8 +36,8 @@ func current_position():
 
 # Move player's position given a new one
 func move(target_coords: Vector2i):
-	#print(target_coords)
-	#print(self.possible_moves)
+	print(target_coords)
+	print(self.possible_moves)
 	if !self.possible_moves.has(target_coords):
 		print("Can't go any further!")
 		return
@@ -46,8 +46,8 @@ func move(target_coords: Vector2i):
 	
 # Attack given position
 func attack(target_coords: Vector2i):
-	#print(target_coords)
-	#print(self.possible_moves)
+	print(target_coords)
+	print(self.possible_attacks)
 	if !self.possible_attacks.has(target_coords):
 		print("Can't go any further!")
 		return

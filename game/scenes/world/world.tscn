@@ -49,6 +49,7 @@ script = ExtResource("3_csw54")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="ring"]
 position = Vector2(0.5, -6.5)
 sprite_frames = SubResource("SpriteFrames_4ag3m")
+animation = &"hover"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ring"]
 position = Vector2(0.5, -8.5)
