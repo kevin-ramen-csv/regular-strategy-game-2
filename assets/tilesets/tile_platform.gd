@@ -18,7 +18,7 @@ func change_health(coords : Vector2i):
 		cell.health -= 1
 		health = cell.health
 		print(cell," Current health: ", cell.health)
-		print(self.cell_map[coords])
+		print(self.cell_map[coords].health)
 	
 	var cell_sprite_data : Dictionary =  {}
 	

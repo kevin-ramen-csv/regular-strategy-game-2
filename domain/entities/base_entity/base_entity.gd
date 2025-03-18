@@ -52,7 +52,20 @@ func attack(target_coords: Vector2i):
 		print("Can't go any further!")
 		return
 	# attack
+	var cell_data : TileData = self.tile_map.get_cell_tile_data(self.current_position())
+	
+	if cell_data.get_custom_data("health") == 1:
+		print("Cannot break where you're standing.")
+		return 
+	
+	if self.tile_map.cell_map.has(self.current_position()):
+		var cell : Cell = self.tile_map.cell_map[self.current_position()]
+		if cell.health == 1:
+			print("Cannot break where you're standing.")
+			return 
 	self.tile_map.change_health(target_coords)
+	
+	return
 	
 	
 	
