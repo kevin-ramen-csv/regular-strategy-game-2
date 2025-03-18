@@ -1,6 +1,6 @@
 class_name Action
 
-enum action {
+enum {
 	MOVE,
 	ATTACK,
 	NONE
